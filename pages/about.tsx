@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
+import MainLayout from "@/components/layout/main";
 
 const Header = dynamic(() => import("@/components/common/header"), {
   ssr: false,
@@ -60,6 +61,8 @@ export default function AboutPage(props: AboutPageProps) {
     </div>
   );
 }
+
+AboutPage.Layout = MainLayout;
 
 export async function getStaticProps() {
   console.log("Get static props");
