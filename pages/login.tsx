@@ -1,19 +1,23 @@
 import React from "react";
 import { authApi } from "../api-client";
+import { useAuth } from "../hooks";
 
 type Props = {};
 
 export default function LoginPage({}: Props) {
+  const { profile, login, logout } = useAuth({
+    revalidateOnMount: false,
+  });
+
   async function handleLoginClick() {
     try {
-      await authApi.login({
-        username: "test1",
-        password: "123123",
-      });
+      await login();
+      console.log("redirect to dashboard");
     } catch (error) {
       console.log("failed to login", error);
     }
   }
+
   async function handleGetProfileClick() {
     try {
       await authApi.getProfile();
@@ -21,9 +25,11 @@ export default function LoginPage({}: Props) {
       console.log("failed to get profile", error);
     }
   }
+
   async function handleLogoutClick() {
     try {
-      await authApi.logout();
+      await logout();
+      console.log("redirect to login page");
     } catch (error) {
       console.log("failed to logout", error);
     }
@@ -32,6 +38,8 @@ export default function LoginPage({}: Props) {
   return (
     <div>
       <h1>Login Page</h1>
+
+      <p>Profile : {JSON.stringify(profile || {}, null, 4)}</p>
 
       <button onClick={handleLoginClick}>Login</button>
       <button onClick={handleGetProfileClick}>Get Profile</button>
