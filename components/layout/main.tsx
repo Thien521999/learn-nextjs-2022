@@ -3,11 +3,11 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 
 export default function MainLayout({ children }: LayoutProps) {
-  useEffect(() => {
-    console.log("MainLayout mounting");
+  // useEffect(() => {
+  //   console.log("MainLayout mounting");
 
-    return () => console.log("MainLayout unmounting");
-  }, []);
+  //   return () => console.log("MainLayout unmounting");
+  // }, []);
 
   return (
     <div>

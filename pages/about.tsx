@@ -1,8 +1,8 @@
 // import Header from "@/components/common/header";
-import React, { useEffect, useState } from "react";
+import AdminLayout from "@/components/layout/admin";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
-import MainLayout from "@/components/layout/main";
+import React, { useEffect, useState } from "react";
 
 const Header = dynamic(() => import("@/components/common/header"), {
   ssr: false,
@@ -14,9 +14,9 @@ export default function AboutPage(props: AboutPageProps) {
   const [postList, setPostList] = useState([]);
   const router = useRouter();
 
-  console.log(router.query?.page);
+  // console.log(router.query?.page);
 
-  console.log("About query", router.query);
+  // console.log("About query", router.query);
   const page = Number(router.query.page);
 
   useEffect(() => {
@@ -62,7 +62,7 @@ export default function AboutPage(props: AboutPageProps) {
   );
 }
 
-AboutPage.Layout = MainLayout;
+AboutPage.Layout = AdminLayout;
 
 export async function getStaticProps() {
   console.log("Get static props");

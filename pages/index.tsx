@@ -17,6 +17,7 @@ const Home: NextPageWithLayout = () => {
       },
     });
   };
+
   return (
     <div className={styles.container}>
       <Head>
