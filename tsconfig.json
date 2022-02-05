@@ -4,8 +4,8 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    // "strict": true,
-    // "useUnknownInCatchVariables": false,
+    "strict": true,
+    "useUnknownInCatchVariables": false,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -22,8 +22,10 @@
       "@/constants/*": ["./constants/*"],
       "@/hooks/*": ["./hooks/*"],
       "@/models/*": ["./models/*"],
-      "@/api-client/*": ["./api-client/*"]
+      "@/api-client/*": ["./api-client/*"],
+      "@/utils/*": ["./api-client/*"]
     }
+    // "strict": false
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
