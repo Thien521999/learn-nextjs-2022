@@ -23,7 +23,8 @@
       "@/hooks/*": ["./hooks/*"],
       "@/models/*": ["./models/*"],
       "@/api-client/*": ["./api-client/*"],
-      "@/utils/*": ["./api-client/*"]
+      "@/utils/*": ["./api-client/*"],
+      "@/images/*": ["./images/*"]
     }
     // "strict": false
   },
