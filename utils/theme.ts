@@ -22,7 +22,7 @@ export let theme = createTheme({
     }
   },
   components: {
-    MuiContainer: {
+    MuiContainer: { 
       defaultProps: {
         maxWidth: 'md'
       },

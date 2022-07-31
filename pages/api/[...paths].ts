@@ -40,6 +40,6 @@ export default function handler(
       resolve(true);
     })
   
-    //   res.status(200).json({ name: "Path - Match all here" });
+      // res.status(200).json({ name: "Path - Match all here" });
   })
 }

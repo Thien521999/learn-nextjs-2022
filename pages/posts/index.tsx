@@ -7,8 +7,6 @@ export interface PostListPageProps {
 }
 
 export default function PostListPage({ posts }: PostListPageProps) {
-  console.log(posts);
-
   return (
     <div>
       <h1>Post List Page</h1>
@@ -29,13 +27,10 @@ export default function PostListPage({ posts }: PostListPageProps) {
 export const getStaticProps: GetStaticProps<PostListPageProps> = async (
   context: GetStaticPropsContext
 ) => {
-  // console.log(context, "context");
-
   const response = await fetch(
     "https://js-post-api.herokuapp.com/api/posts?_page=1"
   );
   const data = await response.json();
-  // console.log("--data--", data);
 
   return {
     props: {
@@ -45,5 +40,7 @@ export const getStaticProps: GetStaticProps<PostListPageProps> = async (
 };
 
 // ~~~getStaticProps~~~~
-// server-side
-// build-time
+// stay: server-side(chay o phia server)
+// run : build-time
+// trong qua trinh dev, moi lan request thi luon chay getStaticProps,
+// con neu da buid tren production thi no chi chay ham nay khi build

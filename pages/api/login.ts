@@ -45,7 +45,7 @@ export default function handler(
             expires: new Date(expiredAt)
           });
   
-          (res as NextApiResponse).status(200).json({message: 'login successfully'});
+          (res as NextApiResponse).status(200).json({message: JSON.parse(body)});
         } catch (error) {
           (res as NextApiResponse).status(500).json({message: 'something went wrong'});
         }
