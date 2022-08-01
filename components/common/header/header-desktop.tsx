@@ -8,7 +8,6 @@ import { ROUTE_LIST } from "./routes";
 
 export function HeaderDesktop() {
   const router = useRouter();
-  console.log(router);
 
   return (
     <Box display={{ xs: "none", lg: "block" }} py={2}>
